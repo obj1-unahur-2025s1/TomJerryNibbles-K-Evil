@@ -1,17 +1,36 @@
 import tomJerryNibbles.*
 
-describe "Grupo de test" {
-
-  test "test 1" {
-    assert.equals(100, 50+50)
+describe "Grupo de test de tom, jerry y nibbles" {
+// Test por igualdad 
+  test "La velocidad de tom al inicio es de 10" {
+    assert.equals(10, tom.velocidadMaxima())   // para verificar igualdad entre dos objetos
   }
 
-  test "test 3" {
-    assert.that(true)
+  test "tom come a jerry velocidad 15.2 y energia 102" {
+    (tom.comer (jerry))
+    assert.equals(15.2, tom.velocidadMaxima())
+    assert.equals(102, tom.energia())    // conviene hacer un assert por cada test
   }
 
-  test "test 4" {
-    assert.notThat(false)
+  test "ahora corre a 24 y su energia es 92" {
+    tom.comer (jerry)
+    tom.corrioDistancia(24)
+    assert.equals(14, tom.velocidadMaxima())
+    assert.equals(90, tom.energia())
+  }
+test "tom come a nibbles velocidad 15.2 y energia 102" {
+    (tom.comer (jerry))
+    assert.equals(15.2, tom.velocidadMaxima())
+    assert.equals(102, tom.energia())    // conviene hacer un assert por cada test
   }
 
+  test "tom puede cazar un raton que esta a 99" {
+    assert.that(tom.puedeCazar(corrioDistancia))
+  }
 }
+
+test "tom caza a nibbles que esta a 50 metros" {
+    tom.puedeCazar (nibbles,50)
+    assert.equals(12.2, tom.velocidadMaxima())
+    
+  }
